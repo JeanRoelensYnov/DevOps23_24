@@ -59,3 +59,22 @@ METTRE IMAGE
 Et se login et créer une table et insérer une valeur
 
 METTRE IMAGE
+
+8. Faire de même avec docker-compose.yml
+Attention il faut supprimer les anciens conteneurs si on veux réutiliser les noms my-mysql et my-phpadmin
+
+Lors du run du docker_compose on peut re effectuer les mêmes opération que dans le 7.
+
+a. Qu'apporte le fichier docker-compose par rapport aux commandes docker run ? Pourquoi est-il intéressant ?
+Il permet de déployer paramétrer et configurer plusieurs container en même temps c'est un peu le grand frére du dockerfile. Donc comme sont "petit frére" il est utile lors de phase de production lorsque l'architecture à déjà était déterminée.
+b. Quel moyen permet de configurer (premier utilisateur, première base de données, mot de passe root, ...) facilement le conteneur mysql au lancement ?
+Mettre photo avec highlight des zones de création 
+
+pour configurer :
+ - le premier utilisateur : MYSQL_USER
+ - la bdd : MYSQL_DATABASE
+ - mdp root : MYSQL_ROOT_PASSWORD
+
+C'est accès instinctif.
+
+
