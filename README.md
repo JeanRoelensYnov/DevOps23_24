@@ -77,4 +77,14 @@ pour configurer :
 
 C'est accès instinctif.
 
+9. Observation de l'isolation réseau entre 3 conteneurs
 
+a. A l'aide de docker-compose et de l'image praqma/network-multitool créer 3 services (web, app et db) et 2 réseaux (frontend et backend). Les services web et db ne devront pas pouvoir effectuer de ping l'un vers l'autre
+METTRE IMAGE
+
+b. Quelles lignes du résultat de la commande docker inspect justifient ce comportement ?
+Dans l'objet "networks" on peut voir que la configuration front et manquant pour l'un des deux tandis que la configuration back et manquant pour l'autre comme configurer.
+METTRE IMAGE
+
+c. Dans quelle situation réelles (avec quelles images) pourrait-on avoir cette configuration réseau ? Dans quel but ?
+Le but est souvent une raison de sécurité dans notre cas imaginons que front se fait attaquer on ne veut pas que l'attaquant puisse remonter jusqu'a la DB, en bref le but de cette manipulation est d'agir un peu comme une DMZ et laisser l'app agir comme un reverse proxy.
