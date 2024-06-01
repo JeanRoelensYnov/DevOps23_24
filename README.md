@@ -26,3 +26,14 @@ pour run le conteneur httpd en daemon : sudo docker run -d -p 8080:80 --name my_
 
 pour copier le fichier demandé dans un docker qui est entrain de run : sudo docker cp /home/jean/DevOps_2324/html/index.html my_apache_server:/usr/local/apache2/htdocs/index.html
 
+6. Builder une image
+
+a. A l'aide d'un dockerfile, crée une image (commande docker build)
+
+b. Exécuter cette nouvelle image de maniére à servir la page html (commande docker run)
+ 
+c. Quelles différences observez-vous entre les procédures 5. et 6. ? 
+
+Les deux pour moi permettent différente utilisation en fonction du stade ou l'on se trouve. La méthode 5. est plus adapté pour du "test" c'est à dire on run notre container et on lui balance au fur et à mesure et selon nos besoin les fichiers pour voir un peu l'intéraction en direct les changements etc...
+Tandis que la méthode 6. avec une image(dockerfile) me fait beaucoup plus penser à une méthode de production, on a finis de tester on connait les étapes dont on a besoin on les inscrits dans l'image afin d'éviter toute erreur qui ont été essayer durant l'utilisation de la méthode 5.
+
