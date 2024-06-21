@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:5.7
+    container_name: my-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: passw0rd
+      MYSQL_DATABASE: mydatabase
+      MYSQL_USER: myuser
+      MYSQL_PASSWORD: passw0rd
+    networks:
+      - my-network
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: my-phpmyadmin
+    environment:
+      PMA_HOST: my-mysql
+    ports:
+      - "8081:80"
+    networks:
+      - my-network
+
+networks:
+  my-network:
+
+volumes:
+  mysql-data:
